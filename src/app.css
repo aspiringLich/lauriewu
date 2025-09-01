@@ -1,2 +1,18 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@font-face {
+	font-family: 'AbrahamLincoln';
+	src: url('lib/AbrahamLincoln.ttf') format('truetype');
+}
+
+@theme {
+    --font-serif: 'AbrahamLincoln';
+}
+
+:root {
+    --background-color-0: oklch(0.344 0.01 73.59);
+    --background-color-1: oklch(0.374 0.01 73.59);
+    --background-color-2: oklch(0.415 0.01 73.59);
+    --background-color-3: oklch(0.445 0.01 73.59);
+}
