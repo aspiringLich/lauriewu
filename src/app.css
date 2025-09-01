@@ -10,9 +10,14 @@
     --font-serif: 'AbrahamLincoln';
 }
 
+svg[height="0"][aria-hidden="true"] {
+    display: fixed;
+}
+
 :root {
     --background-color-0: oklch(0.344 0.01 73.59);
     --background-color-1: oklch(0.374 0.01 73.59);
     --background-color-2: oklch(0.415 0.01 73.59);
     --background-color-3: oklch(0.445 0.01 73.59);
+    --stroke-color: #E3E3D930;
 }

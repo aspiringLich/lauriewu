@@ -1,0 +1,22 @@
+<script lang="ts">
+	let { transform, color = '#000000', ...restProps } = $$props;
+</script>
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+	width="100"
+	height="100"
+	viewBox="0 0 13.229166 13.229167"
+	version="1.1"
+	id="svg1"
+	xmlns="http://www.w3.org/2000/svg"
+	{transform}
+	{...restProps}
+>
+	<path
+		style="fill:none;stroke:{color};stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+		d="m 1.3229168,0 v 9.2604168 h 2.6458337 l -1e-7,-1.3229165 c 0,-1.3229167 0,-2.6458334 -1.3229168,-3.9687501 V 11.90625 H 1.3229168 V 10.583333 H 9.2604176 C 7.9375009,9.260417 6.6145841,9.260417 5.2916671,9.2604168 H 3.9687505 V 11.90625 h 5.2916672 3.9687503"
+		id="path1"
+	/>
+</svg>
