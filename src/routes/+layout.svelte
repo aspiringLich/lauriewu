@@ -33,6 +33,6 @@
 			var(--background-color-1) 80%,
 			var(--background-color-0)
 		);
-		filter: url(#grain);
+		/*filter: url(#grain);*/
 	}
 </style>
