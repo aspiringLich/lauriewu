@@ -1,10 +1,33 @@
 <script lang="ts">
 	import name from '$lib/images/name.png';
 	import abandoned from '$lib/images/Series_Abandoned1.png';
+	import { onMount } from 'svelte';
+
+	let mainImg: HTMLElement;
+
+	onMount(() => {
+		mainImg.animate(
+			{ transform: ['translateY(0)', 'translateY(500px)'] },
+			{
+				fill: 'both',
+				timeline: new ScrollTimeline({
+					source: document.documentElement
+				}),
+				rangeStart: new CSSUnitValue(0, 'vh'),
+				rangeEnd: new CSSUnitValue(100, 'vh')
+			}
+		);
+	});
 </script>
 
-<div class="relative grid h-[80vh] w-full grow grid-cols-1 grid-rows-1" id="header">
-	<img src={abandoned} alt="Title Page" class="-z-10 h-full w-full object-cover" id="main-img" />
+<div class="relative grid h-[100vh] w-full grow grid-cols-1 grid-rows-1" id="header">
+	<img
+		src={abandoned}
+		alt="Title Page"
+		class="-z-10 h-full w-full object-cover"
+		id="main-img"
+		bind:this={mainImg}
+	/>
 
 	<!-- fancy corner (s) -->
 	<div class="mt-8 mr-16" id="corner"></div>
@@ -18,16 +41,16 @@
 		<path d="M0.5 0 V10" style="stroke:var(--stroke-color);stroke-width:1" />
 	</svg>
 
-	<div class="-bottom-1 left-20" id="circle"></div>
+	<!-- <div class="-bottom-1 left-20" id="circle"></div>
 	<div class="-bottom-1 left-28" id="circle"></div>
 	<div class="-bottom-1 right-16" id="circle"></div>
-	<div class="-bottom-1 right-39 md:right-59" id="circle"></div>
+	<div class="-bottom-1 right-39 md:right-59" id="circle"></div> -->
+	<section class="mt-auto">
+		<div class="relative flex w-full justify-center bg-neutral-800">
+			<img src={name} alt="Laurie Wu" class="-mt-4 -mb-4 -ml-2 h-32" />
+		</div>
+	</section>
 </div>
-<section class="sticky top-0">
-	<div class="relative flex w-full justify-center bg-neutral-800">
-		<img src={name} alt="Laurie Wu" class="-mt-4 -mb-4 -ml-2 h-24" />
-	</div>
-</section>
 <div class="h-[200vh]"></div>
 
 <style lang="postcss">
@@ -40,18 +63,18 @@
 	#corner {
 		border-image-source: url($lib/svg/corner.svg);
 		border-image-slice: 45.5 45.5 1.5 1.5;
-		border-image-width: calc(4px * 43 / 3) calc(4px * 43 / 3) 4px 4px;
+		border-image-width: calc(6px * 43 / 3) calc(6px * 43 / 3) 6px 6px;
 	}
 
 	#vline {
-		width: 4px;
+		width: 6px;
 	}
 
 	#main-img {
 		filter: brightness(0.4) saturate(40%);
 	}
 
-	#circle {
-		@apply absolute -m-[2px] h-2 w-2 rounded-full border-2 border-[var(--stroke-color)] z-50;
-	}
+	/*#circle {
+		@apply absolute -m-[3px] h-3 w-3 rounded-full border-2 border-[var(--stroke-color)] z-50;
+	}*/
 </style>
