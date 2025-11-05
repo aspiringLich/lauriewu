@@ -2,6 +2,8 @@
 	import name from '$lib/images/name.png';
 	import abandoned from '$lib/images/Series_Abandoned1.png';
 	import { onMount } from 'svelte';
+	import './sections/sections.css';
+	import SelfPortrait from './sections/SelfPortrait.svelte';
 
 	let mainImg: HTMLElement;
 
@@ -51,7 +53,10 @@
 		</div>
 	</section>
 </div>
-<div class="h-[200vh]"></div>
+<main class="min-h-[200vh] bg-neutral-300">
+	<h1>Section ONE</h1>
+	<SelfPortrait />
+</main>
 
 <style lang="postcss">
 	@reference "../app.css";
@@ -77,4 +82,8 @@
 	/*#circle {
 		@apply absolute -m-[3px] h-3 w-3 rounded-full border-2 border-[var(--stroke-color)] z-50;
 	}*/
+
+	main > h1 {
+		@apply text-3xl;
+	}
 </style>
