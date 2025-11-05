@@ -5,24 +5,24 @@
 	/*box-shadow: 8px 8px theme('colors.neutral.400');*/
 }
 
-.box.grid {
+.box {
 	div {
 		@apply border-neutral-400 bg-neutral-100;
 	}
 
-	div.item {
+	.item {
 		@apply p-2;
 	}
 
-	div.item:not(.prose, .prose-sm) {
+	.item:not(.prose, .prose-sm) {
 		@apply flex flex-row;
 	}
 
-	div.item:not(:last-of-type) {
+	.item:not(:last-of-type) {
 		@apply border-b-2;
 	}
 
-	div.stripe {
+	.stripe {
 		background-image: repeating-linear-gradient(
 			45deg,
 			theme('colors.neutral.100'),
