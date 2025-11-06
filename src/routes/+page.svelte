@@ -54,8 +54,7 @@
 	</section>
 </div>
 <main class="min-h-[200vh] bg-neutral-300">
-	<h1>Section ONE</h1>
-	<SelfPortrait />
+    <SelfPortrait class="mt-24"/>
 </main>
 
 <style lang="postcss">

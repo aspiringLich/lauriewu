@@ -6,20 +6,34 @@
 }
 
 .box {
+	li,
 	div {
-		@apply border-neutral-400 bg-neutral-100;
+		@apply border-neutral-400;
 	}
 
-	.item {
+	.content {
+		@apply border-32 border-neutral-100 bg-neutral-300;
+	}
+
+	li {
 		@apply p-2;
 	}
 
-	.item:not(.prose, .prose-sm) {
-		@apply flex flex-row;
+	li:not(.prose, .prose-sm) {
+		@apply flex flex-row pt-3 text-lg leading-5;
+		font-family: KlinicSlab;
 	}
 
-	.item:not(:last-of-type) {
+	li.title {
+		@apply font-bold;
+	}
+
+	.flex-col > li:not(:last-of-type) {
 		@apply border-b-2;
+	}
+
+	&:not(.flex-col) > .flex {
+		@apply border-l-2;
 	}
 
 	.stripe {
@@ -46,7 +60,7 @@
 		position: absolute;
 		width: 80px;
 		height: 32px;
-		background-color: #dbd8bea0;
+		background-color: #dbd8bec0;
 		border-left: 1px dotted #b7b49d;
 		border-right: 1px dotted #b7b49d;
 	}
@@ -80,4 +94,8 @@
 		right: -24px;
 		bottom: 0;
 	}
+}
+
+.img-shadow {
+	filter: drop-shadow(0 10px 15px rgb(0 0 0 / 0.5));
 }

@@ -6,8 +6,9 @@
 	src: url('lib/AbrahamLincoln.ttf') format('truetype');
 }
 
-@theme {
-    --font-serif: 'AbrahamLincoln';
+@font-face {
+    font-family: 'KlinicSlab';
+    src: url('lib/KlinicSlabMedium.otf') format('opentype');
 }
 
 svg[height="0"][aria-hidden="true"] {
