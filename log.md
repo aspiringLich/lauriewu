@@ -19,3 +19,10 @@ TODO:
 - Put the image in the header
 
   2.5 hours
+
+### 2025/11/05
+
+- Started to add the content; **Self Portrait** done?
+- Epic responsive design
+
+idk, like, 10 hours? 

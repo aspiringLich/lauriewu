@@ -1,50 +1,89 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .box {
-	@apply relative bg-neutral-100;
+	@apply relative bg-neutral-100 text-neutral-900 dark:bg-neutral-600 dark:text-neutral-100;
 	/*box-shadow: 8px 8px theme('colors.neutral.400');*/
+}
+
+.box.large-box {
+	@apply w-96 sm:w-lg md:w-2xl lg:w-4xl xl:w-5xl;
 }
 
 .box {
 	li,
 	div {
-		@apply border-neutral-400;
+		@apply border-neutral-400 dark:border-neutral-700;
 	}
 
 	.content {
-		@apply border-32 border-neutral-100 bg-neutral-300;
+		@apply border-r-2 bg-neutral-100 dark:bg-neutral-600 grow flex items-stretch;
 	}
+	.content:has(+ .flex-col) {
+		@apply border-r-2;
+	}
+	&.max-md\:flex-col > .content:has(+ .flex-col) {
+	    @apply max-md:border-b-2 max-md:border-r-0;
+	}
+	.content-inner {
+		@apply m-12 lg:m-16 bg-neutral-300 dark:bg-neutral-700 grow rounded-md;
+	}
+	
+	.absolute-auto-center {
+		@apply absolute;
+		width: var(--size);
+		margin-left: calc(var(--size) / -2);
+		margin-top: calc(var(--size) / -2);
+	}
+	:where(.dark, .dark *).content + .flex-col {
+		@apply border-neutral-700;
+	}
+	> .flex-col li:not(:last-of-type) {
+		@apply border-b-2;
+	}
+
+	/*> .flex-col {
+		@apply border-l-2;
+	}
+	&.max-md\:flex-col > .flex-col {
+		@apply max-md:border-t-2 max-md:border-l-0!;
+	}*/
 
 	li {
-		@apply p-2;
+		@apply p-2 dark:bg-neutral-600;
 	}
-
 	li:not(.prose, .prose-sm) {
 		@apply flex flex-row pt-3 text-lg leading-5;
 		font-family: KlinicSlab;
 	}
-
+	li.prose,
+	li.prose-sm {
+		@apply text-justify leading-[1.45rem] hyphens-auto;
+	}
 	li.title {
-		@apply font-bold;
-	}
-
-	.flex-col > li:not(:last-of-type) {
-		@apply border-b-2;
-	}
-
-	&:not(.flex-col) > .flex {
-		@apply border-l-2;
+		@apply font-bold text-neutral-950 dark:text-neutral-50;
 	}
 
 	.stripe {
 		background-image: repeating-linear-gradient(
 			45deg,
-			theme('colors.neutral.100'),
-			theme('colors.neutral.100') 4px,
+			transparent,
+			transparent 4px,
 			theme('colors.neutral.300') 4px,
 			theme('colors.neutral.300') 6px
 		);
 		min-height: calc(1lh + 1rem);
+
+		&:where(.dark, .dark *) {
+			background-image: repeating-linear-gradient(
+				45deg,
+				transparent,
+				transparent 4px,
+				theme('colors.neutral.700') 4px,
+				theme('colors.neutral.700') 6px
+			);
+		}
 	}
 }
 

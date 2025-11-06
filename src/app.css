@@ -21,4 +21,10 @@ svg[height="0"][aria-hidden="true"] {
     --background-color-2: oklch(0.415 0.01 73.59);
     --background-color-3: oklch(0.445 0.01 73.59);
     --stroke-color: #E3E3D940;
+    
+    @apply selection:bg-lime-200/50;
+}
+
+img {
+    @apply select-none;
 }
