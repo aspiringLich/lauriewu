@@ -1,7 +1,44 @@
+/*
+ * Layer order has to be declared before Tailwind's import, otherwise `reset` gets appended after
+ * `utilities` and silently overrides them (e.g. `border-width: 0` beats `border-2`).
+ * `reset` sits after `base` so it refines Tailwind's preflight.
+ */
+@layer theme, base, reset, components, utilities;
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-@layer reset, base, components, utilities;
+@font-face {
+	font-family: 'Abraham Lincoln';
+	src: url('./lib/AbrahamLincoln.ttf') format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Klinic Slab';
+	src: url('./lib/KlinicSlabMedium.otf') format('opentype');
+	font-display: swap;
+}
+
+@theme {
+	--font-display: 'Abraham Lincoln', serif;
+	--font-slab: 'Klinic Slab', serif;
+	--color-background: oklch(0.17 0.004 75);
+}
+
+@layer base {
+	html {
+		color-scheme: dark;
+		background-color: var(--color-background);
+		color: var(--color-neutral-200);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+}
 
 @layer reset {
 	/* Box sizing and border defaults */
