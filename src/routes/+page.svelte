@@ -1,9 +1,9 @@
 <script lang="ts">
 	import name from '$lib/images/name.png';
-	import abandoned from '$lib/images/Series_Abandoned1.png';
 	import { onMount } from 'svelte';
 	import './sections/sections.css';
 	import SelfPortrait from './sections/SelfPortrait.svelte';
+	import Light from './sections/Light.svelte';
 
 	let mainImg: HTMLElement;
 
@@ -23,11 +23,12 @@
 </script>
 
 <div class="relative grid h-[100vh] w-full grow grid-cols-1 grid-rows-1" id="header">
-	<img
-		src={abandoned}
+	<enhanced:img
+		src="$lib/images/Series_Abandoned1.png"
 		alt="Title Page"
-		class="-z-10 h-full w-full object-cover"
+		class="relative -z-50 h-full w-full object-cover"
 		id="main-img"
+		fetchpriority="high"
 		bind:this={mainImg}
 	/>
 
@@ -53,8 +54,9 @@
 		</div>
 	</section>
 </div>
-<main class="min-h-[200vh] bg-neutral-300">
+<main class="min-h-[200vh] bg-neutral-400">
     <SelfPortrait class="mt-24"/>
+    <Light class="mt-24" />
 </main>
 
 <style lang="postcss">

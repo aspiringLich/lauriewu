@@ -8,17 +8,17 @@
 			<enhanced:img
 				src="$lib/images/1Self Portrait Tmain.png"
 				alt="Self Portrait"
-				class="absolute-auto-center left-[40%] top-[50%] img-shadow z-10 -rotate-[10deg] lg:-rotate-[5deg]"
+				class="absolute-auto-center img-shadow z-10 -rotate-[10deg] lg:-rotate-[5deg] left-[40%] top-[50%]"
 				style="--size: 90%"
 			/>
 			<div class="content-inner"></div>
 		</div>
 		<div class="flex flex-col md:w-72">
-			<li class="title max-md:px-8!">Self Portrait</li>
-			<li class="max-md:px-8!">Acrylic, Yarn, Screws, Cardboard on Canvas</li>
-			<li class="max-md:px-8!">36x24 inches<span class="grow"></span>2024</li>
+			<li class="title bg-lime-500/40! border-lime-900/30! max-md:px-8 p-2">Self Portrait</li>
+			<li class="max-md:px-8 p-2">Acrylic, Yarn, Screws, Cardboard on Canvas</li>
+			<li class="max-md:px-8 p-2">36x24 inches<span class="grow"></span>2024</li>
 			<li class="stripe"></li>
-			<li class="prose-sm md:flex-[1_1_0] flex-col! overflow-scroll md:px-8! px-12!">
+			<li class="prose-sm md:flex-[1_1_0] overflow-scroll md:px-8 px-12 py-2">
 				<!-- TODO: maybe this could be a folded piece of paper? -->
 				<p>
 					When I tried to take a reference photo of myself for a self-portrait, I accidentally
