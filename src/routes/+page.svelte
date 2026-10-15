@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Hero from '$lib/components/Hero.svelte';
-	import ArtworkImage from '$lib/components/ArtworkImage.svelte';
-	import ArtworkInfo from '$lib/components/ArtworkInfo.svelte';
+	import Hero from '#lib/components/Hero.svelte';
+	import ArtworkImage from '#lib/components/ArtworkImage.svelte';
+	import ArtworkInfo from '#lib/components/ArtworkInfo.svelte';
 
 	// `?w=…` lists the widths to generate; each visitor downloads the smallest one that looks sharp.
-	import selfPortrait from '$lib/images/1Self Portrait Tmain.png?w=600;1200;1800;2400&enhanced';
-	import light1 from '$lib/images/Laurie_Wu_Tree_1.png?w=400;800;1200&enhanced';
-	import light2 from '$lib/images/Laurie_Wu_Tree_2.png?w=400;800;1200&enhanced';
-	import light3 from '$lib/images/Laurie_Wu_Tree_3.png?w=400;800;1200&enhanced';
+	import selfPortrait from '#lib/images/1Self Portrait Tmain.png?w=600;1200;1800;2400&enhanced';
+	import light1 from '#lib/images/Laurie_Wu_Tree_1.png?w=400;800;1200&enhanced';
+	import light2 from '#lib/images/Laurie_Wu_Tree_2.png?w=400;800;1200&enhanced';
+	import light3 from '#lib/images/Laurie_Wu_Tree_3.png?w=400;800;1200&enhanced';
 </script>
 
 <svelte:head>

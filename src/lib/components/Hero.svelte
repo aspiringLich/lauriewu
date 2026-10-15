@@ -11,7 +11,7 @@
 	<!-- Background: the darkened painting. -->
 	<div class="absolute inset-0">
 		<enhanced:img
-			src="$lib/images/Series_Abandoned1.png?w=960"
+			src="#lib/images/Series_Abandoned1.png?w=960"
 			alt=""
 			class="painting"
 			fetchpriority="high"
@@ -19,7 +19,7 @@
 			onerror={() => (previewLoaded = true)}
 		/>
 		<enhanced:img
-			src="$lib/images/Series_Abandoned1.png"
+			src="#lib/images/Series_Abandoned1.png"
 			alt="Painting of an abandoned, decaying prison corridor"
 			class="painting"
 		/>
@@ -31,7 +31,7 @@
 	<h1 class="relative w-4/5 max-w-lg">
 		<span class="sr-only">Laurie Wu</span>
 		<enhanced:img
-			src="$lib/images/name.png"
+			src="#lib/images/name.png"
 			alt=""
 			sizes="(min-width: 40rem) 32rem, 80vw"
 			fetchpriority="high"
