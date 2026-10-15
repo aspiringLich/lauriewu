@@ -1,30 +1,78 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-@font-face {
-	font-family: 'AbrahamLincoln';
-	src: url('lib/AbrahamLincoln.ttf') format('truetype');
-}
+@layer reset, base, components, utilities;
 
-@font-face {
-    font-family: 'KlinicSlab';
-    src: url('lib/KlinicSlabMedium.otf') format('opentype');
-}
+@layer reset {
+	/* Box sizing and border defaults */
+	:where(*, *::before, *::after) {
+		box-sizing: border-box;
+		border-width: 0;
+		border-style: solid;
+		min-width: 0;
+	}
 
-svg[height="0"][aria-hidden="true"] {
-    display: fixed;
-}
+	/* Core root defaults */
+	:where(html) {
+		block-size: 100%;
+		text-size-adjust: none;
+		interpolate-size: allow-keywords;
+	}
 
-:root {
-    --background-color-0: oklch(0.344 0.01 73.59);
-    --background-color-1: oklch(0.374 0.01 73.59);
-    --background-color-2: oklch(0.415 0.01 73.59);
-    --background-color-3: oklch(0.445 0.01 73.59);
-    --stroke-color: #E3E3D940;
-    
-    @apply selection:bg-lime-200/50;
-}
+	:where(body) {
+		min-block-size: 100vh;
+		line-height: 1.5;
+		margin: 0;
+		-webkit-font-smoothing: antialiased;
+	}
 
-img {
-    @apply select-none;
+	/* Typography improvements */
+	:where(h1, h2, h3, h4, h5, h6) {
+		text-wrap: balance;
+		font-weight: bold;
+		margin-block: 0;
+	}
+
+	:where(p) {
+		text-wrap: pretty;
+		margin-block-end: 1em;
+	}
+
+	/* Media handling */
+	:where(img, svg, video, canvas) {
+		display: block;
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+
+	/* Form control modernization */
+	:where(input, textarea, select, button) {
+		font: inherit;
+		letter-spacing: inherit;
+		word-spacing: inherit;
+		color: currentColor;
+	}
+
+	:where(textarea, select, input) {
+		field-sizing: content;
+	}
+
+	:where(select) {
+		appearance: base-select;
+	}
+
+	/* Accessibility */
+	:where(:focus-visible) {
+		outline: 2px solid canvasText;
+		outline-offset: 2px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
 }
